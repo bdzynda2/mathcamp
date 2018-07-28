@@ -1,0 +1,378 @@
+---
+title: "Exercise Set 2"
+author: "David Zynda"
+date: "July 20, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plot3D)
+```
+
+
+## (1) Proof of Injective/Surjective Function
+
+Let $a \in \mathbb{R}$ and $n \in \mathbb{N}$ and define the function $f: \mathbb{R} \rightarrow \mathbb{R}$ by $f(x) = ax^n$. 
+
+### (a) Use your knowledge of proof by induction to verify that if $n$ is even, then $f$ is neither one-to-one nor onto $\mathbb{R}$
+
+Let $n = \{k \in \mathbb{N} | k = 2m \space \forall m \in \mathbb{N}\}$ for $f(x) = ax^n$
+
+Step 1: Let $n=2$
+
+$$f(x) = ax^2$$
+Is $f(x)$ 1-to-1 or injective? Clearly not. Let $x_1 = 1$ and $x_2 = -1$. Then $f(x_1) = f(x_2)$ where $x_1 \ne x_2$. Hence, $f(x)$ is not one-to-one since each $y$ does not have a unique $x$.
+
+Secondly, $f(x)$ is not onto or surjective either. As defined above, the target space includes all of $\mathbb{R}$. Yet, it is obvious that the domain does not include all the target space since it excludes all negative numbers. Consequently, the function cannot be onto. 
+
+
+Step 2: Let $S_{n+1} = {f(x) = ax^{n+2}}$
+
+$$f(x) = ax^{n+2}$$
+
+Notice: raising any $ax$ to the $n^{th}$ even power for all $x$ and $a$ in $\mathbb{R}$ results in a positive number. As such, the function is neither one to one nor onto. 
+
+Consequently, by the principle of induction, all even $n$ guarantee the function $f(x) = ax^n$ is neither one-to-one nor onto. 
+
+### (b) Assuming that the function $f$ is coninuous, determine whether $f$ is one-to-one or onto if $n$ is odd instead of even.
+
+Let $n \in \mathbb{N}$ be an odd number in $f(x) = ax^n$. And, let $m \in \mathbb{R} > 0$ and $a > 0$. 
+
+$$x < x+m \implies f(x) < f(x+m)$$
+Since $a > 0$. In fact, as $x$ approaches infinity, the limit tends towards infinity. Similarly, as x becomes infinitely negative, the limit approaches negative infinity. 
+
+Because of this:
+
+$$\forall y \in \mathbb{R}: \exists M > 0: x > M \implies f(x) > y$$
+$$\forall y \in \mathbb{R}: \exists m > 0: x > m \implies f(x) < y$$
+By the Intermediate Value Theorem, there exists a $c \in [m,M]$ such that $f(c) = y$. Hence, all the target space is in the range, and the function is onto. 
+
+Clearly, it is one-to-one as well. Because the function is strictly monotonically increasing given $a>0$, the function must be one-to-one. Each $y$ has a distinct $x$. 
+
+Now, if $a < 0$, the conditions above still hold, but the function would be monotonically decreasing. If $a=0$ all bets are off since the function would be neither one-to-one or onto since for all $x$, $f(x) = 0$. 
+
+
+
+## (2) Proof of the sum of squared natural numbers
+
+Prove that for every $n \in \mathbb{N}$:
+
+$$1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n+1)(2n+1)}{6}$$
+
+Proof by Induction:
+
+Let $$\sum^{n}_{i=1} n^2 = \frac{n(n+1)(2n+1)}{6}$$
+
+_Step 1_
+Let $n=1$:
+
+$$\sum^1_{i=1} n^2 = \frac{(1)(1+1)(1+2)}{6} = \frac{6}{6} = 1$$
+
+Hence, the first step is true. 
+
+_Step 2_
+Now, show that this statement holds for $n+1$ such that:
+
+$$\sum^{n+1}_{i=k}n^2 = \frac{(n+1)(n+2)(2(n+1)+1)}{6} = \frac{(n+1)(n+2)(2n+3)}{6}$$
+
+
+Let:
+
+$$\sum^{n+1}_k n^2 = \sum^{n+1}_k k^2 + (n+1)^2$$
+$$= \frac{n(n+1)(2n+1)}{6} + (n+1)^2 = \frac{n(n+1)(2n+1) + 6(n+1)^2}{6}$$
+
+$$= \frac{(n+1)(n(2n+1) + 6(n+1))}{6}$$
+$$= \frac{(n+1)(n(2n^2 + n + 6n + 6))}{6}$$
+$$= \frac{(n+1)(2n^2 + 7n + 6)}{6}$$
+$$= \frac{(n+1)(2n+3)(n+2)}{6} = \sum^{n+1}_{i=k} n_k^2$$
+
+Therefore, the statement holds for $n+1$. Thus, by the principle of induction, it is true that:
+
+for every $n \in \mathbb{N}$:
+
+$$1^2 + 2^2 + 3^2 + ... + n^2 = \frac{n(n+1)(2n+1)}{6}$$
+
+
+
+## (3) Determine the lengths of the following vectors:
+
+$$length= norm= ||x||:=\sqrt{x_1^2 + x_2^2 + ... + x_n^2} \space \space \space \forall x \in \mathbb{R}^n$$
+
+### (a) (12, 5)
+
+$$||x||:=\sqrt{12^2 + 5^2} = \sqrt{169} = 13$$
+
+### (b) (1,1)
+
+$$||x||:=\sqrt{1^2 + 1^2} = \sqrt{2}$$
+
+### (c) (3,3)
+
+$$||x||:=\sqrt{3^2 + 3^2} = \sqrt{18} = 3\sqrt{2}$$
+
+### (d) (3, -3)
+
+$$||x||:=\sqrt{3^2 + (-3)^2} = \sqrt{18} = 3\sqrt{2}$$
+
+### (e) (-1, 1, -1)
+
+$$||x||:=\sqrt{(-1)^2 + 1^2 + (-1)^2} =  \sqrt{3}$$
+
+### (f) (1,1,1,1) 
+
+$$||x||:=\sqrt{1^2 + 1^2 + 1^2 + 1^2} =  \sqrt{4} = 2$$
+
+### (g) (12, 0, 0, 5)
+
+$$||x||:=\sqrt{12^2 + 0^2 + 0^2 + 5^2} =  \sqrt{169} = 13$$
+
+### (h) (12, -1, 1, 5)
+
+$$||x||:=\sqrt{12^2 + (-1)^2 + 1^2 + 5^2} =  \sqrt{171} = 3\sqrt{19}$$
+
+
+## (4) For each vector in #3, determine a vector of length 1 that points in the opposite direction. 
+
+
+
+### (a) (12, 5)
+Direction: $(-12k, -5k)$
+$$12^2k^2 + 5^2k^2  = 1$$
+$$\implies k = \frac{1}{13}$$
+So, a vector in the opposite direction of length 1 is: $(-\frac{12}{13}, -\frac{5}{13})$
+
+
+### (b) (1,1)
+
+Direction: $(-1k, -1k)$
+$$1^2k^2 + 1^2k^2  = 1$$
+$$\implies k = \sqrt{2}$$
+So, a vector in the opposite direction of length 1 is: $$(-\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}})$$
+
+
+
+
+## (c) (3,3)
+Direction: $(-3k, -3k)$
+$$3^2k^2 + 3^2k^2  = 1$$
+$$\implies k = \frac{1}{\sqrt{18}}$$
+So, a vector in the opposite direction of length 1 is: $(-\frac{3}{\sqrt{18}}, -\frac{3}{\sqrt{18}})$
+
+
+### (d) (3, -3)
+
+Direction: $(-3k, 3k)$
+$$3^2k^2 + (-3)^2k^2  = 1$$
+$$\implies k = \frac{1}{\sqrt{18}}$$
+So, a vector in the opposite direction of length 1 is: $(-\frac{3}{\sqrt{18}}, \frac{3}{\sqrt{18}})$
+
+
+
+
+### (e) (-1, 1, -1)
+
+Opposite Direction: $(1k,-1k, 1k)$
+Set length to 1: $(1k)^2 + (-1k)^2 + (1k)^2 = 1$
+This implies $k = \frac{1}/{\sqrt{3}}$
+Hence a vector in the opposite direction of length 1 is: $(\frac{1}{\sqrt{3}}, -\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}})$
+
+
+### (f) (1,1,1,1) 
+
+Opposite Direction: $(-1k,-1k, -1k, -1k)$
+Set length to 1: $(-1k)^2 + (-1k)^2 + (-1k)^2 + (-1k^2) = 1$
+This implies $k = \frac{1}{\sqrt{4}} = \frac{1}{2}$
+Hence a vector in the opposite direction of length 1 is: $(-\frac{1}{4}, -\frac{1}{4}, -\frac{1}{4}, -\frac{1}{4})$
+
+
+
+### (g) (12, 0, 0, 5)
+
+Opposite Direction: $(-12k,0k, 0k, -5k)$
+Set length to 1: $(-12k)^2 + (0k)^2 + (0k)^2 + (-5k^2) = 1$
+This implies $k = \frac{1}{\sqrt{169}} = \frac{1}{13}$
+Hence a vector in the opposite direction of length 1 is: $(-\frac{12}{13}, 0, 0, -\frac{5}{13})$
+
+### (h) (12, -1, 1, 5)
+
+Opposite Direction: $(-12k,1k, -1k, -5k)$
+Set length to 1: $(-12k)^2 + (-1k)^2 + (1k)^2 + (-5k^2) = 1$
+This implies $k = \frac{1}{\sqrt{171}}$
+Hence a vector in the opposite direction of length 1 is: $(-\frac{12}{\sqrt{171}}, \frac{1}{\sqrt{171}}, -\frac{1}{\sqrt{171}}, -\frac{5}{\sqrt{171}})$
+
+
+## (5) For each of the following vectors, find two vectors $u$ and $w$ that are orthogonal to $v$ and have the same length as $v$:
+
+### (a) $v = (1,0)$
+
+let $u = (0,1)$ and $w = (0, -1)$
+
+$$u \cdot v = w \cdot v = 0$$
+$$length: \space \space l(v) = l(w) = l(u) = 1$$
+
+### (b) $v = (1,1)$
+
+let $u  = (1,-1)$ and $w = (-1,1)$. Then, all vectors share the same length of $sqrt{2}$ and v is orthogonal to u an w since the dot product is zero (1x1 + (-1)x1 = 0). 
+
+### (c) $v = (1, 0, 0)$
+
+let $u = (0,1,0)$ and $w = (0,0,1)$
+
+### (d) $v = (1,1,1)$
+
+of course, length = $\frac{1}{\sqrt{3}}$
+
+let $u = (0,  \sqrt{\frac{\sqrt{3}}{2}}, - \sqrt{\frac{\sqrt{3}}{2}})$. Clearly the length will be $\sqrt{3}$ and the dot product is 0. 
+
+let $w = (\sqrt{\frac{\sqrt{3}}{2}}, - \sqrt{\frac{\sqrt{3}}{2}}, 0)$ for a similar and correct result as above with $u$. 
+
+
+## (6) Draw a diagram in $\mathbb{R}^2$ and vector $a = (1, -1)$, the line $H$, and vectors $(1,1), (1,0), (2,1), (0, -1), (0, 1), (-1, 0), (-1,2), (-1,0), (-1,1)$. Determine $a \cdot v$, which side of the line $H$ each is on both visually and analytically and detemine angle between. 
+
+Below is a plot. Notice in the comments to the right of the code the corresponding vectors and colors to aid in matching them on the plot. 
+
+```{r}
+par(pty = 's')
+plot(c(-3, 3), c(-3, 3), type = 'l', lty=4, ylab = 'x2', xlab='x1') #Line H
+abline(h=0)
+abline(v=0)
+points(c(0,1), c(0,-1), type = 'l', col='red')        #(1,0)  Red
+points(c(0,1), c(0,1), type = 'l', col='orange')      #(1,1)  Orange
+points(c(0,1), c(0,0), type = 'l', col='green')       #(1,0)  Green 
+points(c(0,2), c(0,1), type = 'l', col='blue')        #(2,1)  Blue
+points(c(0,0), c(0,-1), type = 'l', col='purple')     #(0,-1) Purple
+points(c(0,0), c(0,1), type = 'l', col='yellow')      #(0,1)  Yellow
+points(c(0,-1), c(0,2), type = 'l', col='pink')       #(-1,2) Pink
+points(c(0,-1), c(0,0), type = 'l', col='deeppink3')  #(-1,0) Dark Pink
+points(c(0,-1), c(0,1), type = 'l', col='chocolate4') #(-1,1) Brown
+```
+
+
+### (a) (1,1)
+
+Dot product: 1x1 + (-1)x1 = 0. 
+This lies on the line H. 
+The angle is 90 degrees visually. 
+Because the dot product is 0, this guarentees the angle is 90 since cos(90 degrees) = 0
+
+### (b) (1,0)
+
+Dot product: 1x1 + -1x0 = 1
+This lies on the lower-right side of H or below H. 
+The angle appears visually 45 degrees and acute. 
+1 / (1 * sqrt(2)) = $\frac{1}{\sqrt{2}}$ which is 45 degrees since cos(45 degrees) = $\frac{1}{\sqrt{2}}$
+So, the angle is acute. 
+
+### (c) (2,1) 
+
+Dot product: 1x2 + -1x1 = 1
+This lies on the southeast side or below H. 
+The angle appears acute. 
+Since the dot product is greater than zero, the angle is acute analytically. 
+
+### (d) (0,-1)
+
+Dot Product: 1x0 + -1*-1 = 1
+This lies on the northwest side of the plot or above H. 
+The angle appears acute. 
+The angle is acute since the dot product is greater than zero. 
+
+### (e) (0,1)
+
+Dot Product: 1x0 + -1x1 = -1
+This lies on the Northwest side of the plot or above H. 
+The angle appear obtuse. 
+The angle is obtuse since the dot product is less than one. 
+
+### (f) (-1,2)
+
+Dot Product: 1x-1 + -1x2 = -3
+This lies on the northwest side, or above H. 
+The angle appears obtuse. 
+The angle is obtuse since the dot product is less than zero. 
+
+### (-1,0)
+
+Dot product: 1x-1 + -1x0 = -1
+This lies on the northwest side or above H. 
+The angle appears obtuse. 
+The angle is obtuse since the dot product is less than zero. 
+
+### (-1, 1)
+
+Dot Product: -1x1 + -1x1 = -2
+This lies on the northwest side or above H. 
+The angle appears obtuse. 
+The angle is obtuse since the dot product is less than zero. 
+
+
+
+
+## (7) Vectors in $\mathbb{R}^3$
+
+### (a) $v=(1,0,0)$
+
+$a \cdot v = (1)(1) + (1)(0) + (1)(0) = 1$ |
+$a \cdot v > 0 \implies$ the angle is acute. 
+Lies on the same side of $H$
+
+### (b) $v=(0,0,1)$
+
+$a \cdot v = (1)(0) + (1)(0) + (1)(1) = 1$ |
+$a \cdot v > 0 \implies$ the angle is acute. 
+Lies on the same side of $H$
+
+### (c) $v=(0,-1,0)$
+
+$a \cdot v = (1)(0) + (1)(-1) + (1)(0) = -1$ |
+$a \cdot v < 0 \implies$ the angle is obtuse. 
+Lies on the opposite side of $H$
+
+### (d) $v=(0,1,1)$
+
+$a \cdot v = (1)(0) + (1)(1) + (1)(1) = 2$ |
+$a \cdot v > 0 \implies$ the angle is acute 
+Lies on the opposite side of $H$
+
+### (e) $v=(1,-1,0)$
+
+$a \cdot v = (1)(0) + (1)(-1) + (1)(1) = 0$ |
+$a \cdot v = 0 \implies$ the angle is a right angle and the vectors are orthogonal.  
+Lies on the plane of $H$
+
+
+## (8) Prove that if $n > 1$ then the $x_1$ axis in $\mathbb{R}^n$ is a closed set. 
+
+_Please grade me on the first answer below. I have included a second proof too that I thought up. Can you check the second one and tell me if it works, but only grade the first one?_
+
+Proof 1:
+
+The compliment of the $x_1$ axis is defined as $\{ (x_1, x_2, ..., x_n) \in \mathbb{R}^n | x_2, ...,x_n \ne 0\}$
+
+It must be the case that the compliment is open. For any point in the compliment as a part of $\mathbb{R}^n$, there must be an $\varepsilon > 0$ such that a ball can be constructed around any point which is the subset of that space. The compliment has no boundary points. Therefore, every point in it can have a ball constructed which is a subset of the compliment. The only boundary is the point a which $x_2,...x_n = 0$ which is contained in $x_1$. Consequently the compliment is open. 
+
+If the compliment is open, then the original set is closed. Therefore, the $x_1$ axis is a closed set. 
+
+Proof 2: 
+
+
+Using contradiction, assume that the $x_1$ axis in $\mathbb{R}^n$ is an open set. Simply let $x_1$ denote the entire $x_1$ axis. Then, by definition:
+
+$$\forall x \in x_1 \space : \exists \varepsilon > 0: B(x,\varepsilon) \subseteq x_1$$
+
+Let $a \in \mathbb{R}$ be on the line $x_1$. Then, there exists a neighborhood around $a$ which is a subset of $x_1$ for all values of $\varepsilon > 0$. But, $x_1$ itself is a line. Therefore, any ball around $a$ will not be on the line $x_1$. By definition, this would mean that $x_1$ is a closed set. But, we assumed it was open, creating a contradiction. Therefore, $x_1$ axis in $\mathbb{R}^n$ is closed. 
+
+
+## (9) Prove that every finite subset of $\mathbb{R}^n$ is a closed set. 
+
+Let $S_1, S_2, ... S_n$ each be a singleton subset of $\mathbb{R}^n$. Because each subset $S_n$ is a singleton, it is closed - that is there is no $\varepsilon > 0$ for which a ball can be a subset of any $S_n$. 
+
+Take the union of each $S_n$ to make the subset $S$ such that:
+
+$$S_1 \cup S_2 \cup...\cup S_n = S$$
+The union of closes sets itself is closed. Therefore, $S$ is closed. Therefore, any finite subset of $\mathbb{R}^n$ is closed. 
+
+
+
+

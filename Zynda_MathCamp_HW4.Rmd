@@ -1,0 +1,23 @@
+---
+title: "Exercise Set 4"
+author: "David Zynda"
+date: "July 26, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A set is convex if and only if every convex combination of vectors in S is also in S. 
+
+(1) If every combination of vectors in S is also in S, then a set is convex. 
+
+This proof is evident from the definition of a convex set, that is:
+
+A set S is convex in vector space $V$ if for any two points $x,y$ in $S$ and $\lambda$ in the unit interval $(0,1)$ the point $(1-\lambda)x + \lambda y$ is in S. 
+
+Clearly, if every combination of vectors is convex in $S$, then there will be two that fulfill that definition of convexity.
+
+(2) A set is convex if every convex combination of vectros in $S$ is also in $S$. 
+

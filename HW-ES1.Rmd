@@ -1,0 +1,446 @@
+---
+title: "Exercise Set 1"
+author: "David Zynda"
+date: "July 17, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. For each of the following statements, determine whether the statement is true or false, and if false indicate why it’s false.  
+
+$\newline$
+
+
+###(a) $\{(2,1,1), (2,1), (1,1)\} \subseteq \mathbb{R}^3 \times \mathbb{R}^2$
+
+This is false. 
+
+Note: 
+
+$$\mathbb{R}^3 = \mathbb{R} \times \mathbb{R} \times \mathbb{R} = \{(a,b,c):a,b,c \in \mathbb{R}\}$$
+$$\mathbb{R}^2 = \mathbb{R} \times \mathbb{R}  = \{(x,y):x,y \in \mathbb{R}\}$$
+hence:
+$$\mathbb{R}^3 \times \mathbb{R}^2 = (\mathbb{R}\times\mathbb{R}\times\mathbb{R}) \times(\mathbb{R}\times\mathbb{R}) = \{((a,b,c),(x,y)): a,b,c,x,y \in \mathbb{R}\}$$
+Consequently, any subset will be of the form $\{((a,b,c),(x,y))\}$ where $a,b,c,x,y \in \mathbb{R}$  
+
+
+$\newline$ 
+$\newline$
+
+
+###(b) $\{(2,1,1), (2,1), (1,1)\} \subseteq \mathbb{R}^3 \cup \mathbb{R}^2$
+
+This is true. 
+
+$\newline$ 
+$\newline$
+
+
+###(c) $\{(2,1,1), (2,1), (1,1)\} \subseteq \mathbb{R}^3 \times \mathbb{R}^2 \times \mathbb{R}^2$
+
+This is false. There are no individual three tuples in the subset above that are contained in the set $\mathbb{R}^3 \times \mathbb{R}^2 \times \mathbb{R}^2$ as elements would take the form of ordered lists such as: $((a,b,c),(d,e), (x,y))$ where $a,b,c, d, e, x,y \in \mathbb{R}$
+
+$\newline$ 
+$\newline$
+
+
+###(d) $((2,1,1), (2,1), (1,1)) \in \mathbb{R}^3 \times \mathbb{R}^2 \times \mathbb{R}^2$
+
+This is true.
+
+$\newline$ 
+$\newline$
+
+
+###(e) $\{((2,1,1), (2,1), (1,1))\} \subseteq \mathbb{R}^3 \times \mathbb{R}^2 \times \mathbb{R}^2$
+
+This is true. 
+
+$\newline$ 
+$\newline$
+
+
+
+###(f) $\exists n \in \mathbb{N} : \{(2,1,1),(2,1),(1,1)\} \subseteq \mathbb{R}^n$
+
+This is false. By definition, $\mathbb{R}^n = \{x:x=(x_1,x_2,...,x_n), x_i \in \mathbb{R}\}$
+
+hence, for any given $n \in \mathbb{N}$, there will be only lists with $n$ entries that are contained in $\mathbb{R}^n$, and not $n+m$ entries where $m \in \mathbb{N}$
+
+In other words, any lists put in as elements of a subset of $\mathbb{R}^n$ must have $n$ entries only. 
+
+$\newline$ 
+$\newline$
+
+
+
+###(g) $(1,2,3) \subseteq \mathbb{N}$
+
+This is false because $(1,2,3)$ is not a set. 
+
+$\newline$ 
+$\newline$
+
+
+
+###(h) $(1,2,3) \in \mathbb{N}$
+
+This is false. $(1,2,3) \in \mathbb{N}^3$. It cannot be an element of $\mathbb{N}$ since $\mathbb{N}$ is one dimension.
+
+$\newline$ 
+$\newline$
+
+
+
+###(i) $(1,2,3) \in \mathbb{R}^3$
+
+This is true. 
+
+$\newline$ 
+$\newline$
+
+
+
+###(j) $\{(2,1,1), (2,1), (1,1) \} = \{(2,1), (2,1,1), (1,1) \}$
+
+This is true. Order does not matter for sets. 
+
+$\newline$ 
+$\newline$
+
+
+
+###(k) $\mathbb{R}^2 \cup \mathbb{R}^3 = \mathbb{R}^3 \cup \mathbb{R}^2$
+
+This is true. For any set $X$ and $Y$, it is always true that $X \cup Y = Y \cup X$
+
+$\newline$ 
+$\newline$
+
+
+###(l) $\mathbb{R}^2 \times \mathbb{R}^3 = \mathbb{R}^3 \times \mathbb{R}^2$
+
+This is false. 
+
+By definition:
+
+$$\mathbb{R}^2 \times \mathbb{R}^3 = \{((a,b), (x,y,z)): a,b,x,y,z \in \mathbb{R} \}$$
+
+whereas: 
+
+$$\mathbb{R}^3 \times \mathbb{R}^2 = \{((x,y,z), (a,b)): a,b,x,y,z \in \mathbb{R} \}$$
+
+Order matters for the tuples that make up the elements of the cartesian product of two sets, such as $\mathbb{R}^2$ and $\mathbb{R}^3$. Because order matters for n-tuples or _ordered_ lists, the cartesian product is not commutative (unless the two sets are equivalent or they are both empty sets). 
+
+
+$\newline$
+$\newline$
+
+
+
+## 2. Using only negation, conjuction, and disjuction construct a compound statement for the remaining five truth-value profiles. 
+
+Let $\lnot$ denote $\sim$.
+
+The five remaining truth profiles (by column) are:
+
+| PQ |  i.  | ii. | iii.| iv. |v.   |
+|----|------|-----|-----|-----|-----|
+|TT  | T    | T   | F   | F   | F   |
+|TF  | T    | T   | T   | F   | F   |
+|FT  | T    | F   | F   | T   | F   |
+|FF  | T    | T   | F   | F   | F   |
+
+(i.) $(P \lor \lnot P) \lor (Q \lor \lnot Q)$ 
+
+(ii.) $P \lor \lnot Q$
+
+(iii.) $P \land \lnot Q$
+
+(iv.) $\lnot P \land Q$
+
+(v.) $(P \land Q) \land (\lnot P \land \lnot Q)$ or alternatively $(P \land \lnot P) \land (Q \land \lnot Q)$
+
+
+
+$\newline$
+$\newline$
+
+
+
+## 3. Let _A_ be an _m x n_ matrix and let _f_ be the function _f(x) = Ax_
+
+$\newline$
+
+
+### (a) What is the domain of _f_ and what is the target space of _f_?
+
+If $A$ is an $m \times n$ matrix, then $f: \mathbb{R}^n \rightarrow \mathbb{R}^m$.
+
+Hence, the domain is $\mathbb{R}^n$ and the target space is $\mathbb{R}^m$
+
+
+
+$\newline$
+$\newline$
+
+
+
+### (b) What conditions on _m, n,_ and _A_ are both necessary and sufficient for _f_ to be one-to-one and onto its target space?
+
+
+By definition, a function is one-to-one if for every $y \in f(x)$, there exists a unique $x$ in the domain $X$ of $f$ such that $f(x) = y$.
+
+In this case the function $f(x) = Ax$ is one-to-one if there is only one value of $x$ that maps to $y$ for a given $y$ in the target space. In other words, two different values of $x \in X$ cannot map to the same $y \in Y$. It admits of only one solution.
+
+
+Additionally, a function, by definition, is onto if for every $y \in Y$, or every $y$ in the target, there exists an $x$ in the domain such that $f(x) = y$.
+
+In this case, the function $f(x) = Ax$ is onto if the range of the function is its entire target space. In other words, every $y \in Y$ is covered by some $x \in X$ such that $f(x) = y$ This would admit to at least one solution in $x$
+
+Consequently, a necessary condition is that there is at least one solution in $x$. A sufficient condition is that there is only one solution, and this would mean that $f$ is both one-to-one and onto. Also, it must be the case that $m = n$ If a linear tranformation has only one solution, then A is invertible (nonsingular), which requires that it is a square matrix, hence $m = n$. Invertibility also guarantess that $m =  n =$ number of pivots. 
+
+
+$\newline$
+$\newline$
+
+### (c) If _m = 2_ and _n = 1_ under what conditions (if any) will _f_ be one-to-one? Onto?
+
+Simon and Blume note the following facts of matrices $A$ with $m > n$ or more columns than rows:
+
+(1) $Ax = 0$ has one or infinitely many solutions
+(2) For any given $b$, $Ax = b$ has 0, 1, or infinitely many solutions.
+(3) If rank $A$ = number of unknowns, $Ax = b$ has 0 or 1 solution for every $b$ 
+
+
+So, it is one-to-one so as long as there is only one solution. This would also mean that there is one pivot.  
+
+The function is onto only if the function has at least one solution. However, to be onto will require a pivot in every row. For any matrix of the size $m=2$ and $n=1$, I can do elementary row operations which make the bottom element ($a_{2,1}$) 0. So, the rank cannot equal the number of unknowns which excludes this case from being onto. This is to say, there is not a solution for every $b$ or range in the target space $\mathbb{R}^m$
+
+$\newline$
+$\newline$
+
+### (d) If _m = 2_ and _n = 3_, under what conditions (if any) will _f_ be one-to-one? Onto?
+
+If $m = 2$ and $n = 3$, then there are more unknowns (columns) than equations (rows). 
+
+Then, three points follows (Simon and Blume):
+
+(1) $Ax = 0$ has infinitely many solutions.
+(2) for any given $b$, $Ax = b$ has 0 or infinitely many solutions
+(3) if rank $A=$ the number of equations ($m$), $Ax = b$ has infinitely many solutions for every $b$ ($f(x)$)
+
+Hence, it cannot be one-to-one in this case since there is no unique solution for a linear transformation of this form. Every case has infinitely many solutions, or none at all. Furthermore, not every column can have a pivot. This would allow for free variables, which can take give many solutions. If the solutions are not unique, then the equation is not one-to-one. 
+
+It can be onto if there is at least one solution (or infinitely many solutions). Additionally, there must be a pivot in every row. 
+
+
+
+
+
+$\newline$
+$\newline$
+
+
+
+
+
+## 4. You can fool some people all of the time, and you can fool all the people some of the time, but you can't fool all the people all the time. 
+
+Let $X = \{a,b,c\}$ and $Y = \{m, w, f\}$. Let the open statement "$x$ can be fooled at time $y$" be denoted as $\phi(x,y)$. Let the set of pairs $(x,y)$ for which $\phi(x,y) = T$ be represented by the set $F$. 
+
+
+$$SA1: \space \exists x \in X: \forall y \in Y: \phi(x,y) = T$$
+In plain English, there exists one person who is fooled everyday. 
+$\newline$
+
+
+$$SA2: \space \forall y \in Y: \exists x \in X: \phi(x,y) = T$$
+Or, for all days, there exists a person who is fooled (not necessarily a unique one person)
+$\newline$
+
+
+$$AS1: \space \exists y \in Y: \forall x \in X: \phi(x,y) = T$$
+Rather, there exists one day where all people are fooled. 
+$\newline$
+
+
+$$AS2: \space \forall x \in X: \exists y \in Y: \phi(x,y) = T$$
+In other words, for all people, there is one day (not necessarily one unique day) where they are fooled. Everyone is fooled on some day. 
+$\newline$
+
+
+$$AA: \space \forall x \in X: \forall y \in Y: \phi(x,y) = T$$
+$$\sim AA = \space \sim (\forall x \in X: \forall y \in Y: \phi(x,y))
+= \exists x \in X: \exists y \in Y: \phi(x,y) = F$$
+
+
+
+
+Therefore, $\sim AA$ indicates not all of the people are fooled everyday. There exists one person who is not fooled on some day. 
+
+
+$\newline$
+
+_______________________________________________________________
+### (a) 
+
+Let the blue dot signify the set of pairs for which $x$ can be fooled at time $y$. 
+
+$$AA$$
+
+```{r, echo=FALSE}
+
+x = c(1,1,1,2,2,2,3,3,3)
+y = c(1,2,3,1,2,3,1,2,3)
+
+plot(x,y, pch = 19, col = 'blue',
+     main = 'AA',
+     xlab = 'People',
+     ylab = 'Day',
+     xaxt = 'n',
+     yaxt = 'n')
+
+axis(1, at=1:3, labels=letters[1:3])
+axis(2, at=1:3, labels = c('m', 'w', 'f'))
+
+
+
+```
+
+This is to say, all of the people can be fooled all of the time. 
+
+
+
+_______________________________________________________________
+### (b) 
+
+
+$$ SA_1 \land AS_1 \land \sim AA $$
+
+
+```{r, echo=FALSE}
+
+x = c(1,1,1,2,3)
+y = c(1,2,3,3,3)
+
+plot(x,y, pch = 19, col = 'blue',
+     main = 'SA1 and AS1 and not AA',
+     xlab = 'People',
+     ylab = 'Day',
+     xaxt = 'n',
+     yaxt = 'n')
+
+axis(1, at=1:3, labels=letters[1:3])
+axis(2, at=1:3, labels = c('m', 'w', 'f'))
+
+
+
+```
+
+One person is fooled everyday (SA1). There is one time for which everyone is fooled (AS1). There is one time where one person is not fooled. 
+
+
+
+_______________________________________________________________
+### (c)
+
+$$SA_1 \land AS_2 \land \sim AA$$
+
+
+```{r, echo=FALSE}
+
+x = c(1,1,1,2,3)
+y = c(1,2,3,3,1)
+
+plot(x,y, pch = 19, col = 'blue',
+     main = 'SA1 and AS2 and not AA',
+     xlab = 'People',
+     ylab = 'Day',
+     xaxt = 'n',
+     yaxt = 'n')
+
+axis(1, at=1:3, labels=letters[1:3])
+axis(2, at=1:3, labels = c('m', 'w', 'f'))
+
+
+
+```
+
+
+There exists one person who is fooled every day. All people are fooled on some day. There is a time when a person is not fooled. 
+
+
+
+
+_______________________________________________________________
+### (d) 
+
+$$SA_2 \land AS_1 \land \sim AA $$
+
+```{r, echo=FALSE}
+
+x = c(1,2,2,3,3)
+y = c(3,2,3,1,3)
+
+plot(x,y, pch = 19, col = 'blue',
+     main = 'SA2 and AS1 and not AA',
+     xlab = 'People',
+     ylab = 'Day',
+     xaxt = 'n',
+     yaxt = 'n')
+
+axis(1, at=1:3, labels=letters[1:3])
+axis(2, at=1:3, labels = c('m', 'w', 'f'))
+
+
+
+```
+
+
+Everday, there is a person who is fooled. There is one day for which all people are fooled. Not everyone is fooled every day. 
+
+
+
+_______________________________________________________________
+### (e) 
+
+$$SA_2 \land AS_2 \land \sim AA$$
+
+```{r, echo=FALSE}
+
+x = c(1,2,3)
+y = c(3,2,1)
+
+plot(x,y, pch = 19, col = 'blue',
+     main = 'SA2 and AS2 and not AA',
+     xlab = 'People',
+     ylab = 'Day',
+     xaxt = 'n',
+     yaxt = 'n')
+
+axis(1, at=1:3, labels=letters[1:3])
+axis(2, at=1:3, labels = c('m', 'w', 'f'))
+
+
+
+```
+
+
+Everday one person is fooled. Every person is fooled on some day. One day, one person is not fooled. 
+
+_______________________________________________________________
+
+
+## 5. Now let _X_ and _Y_ be arbitrary sets. Prove that SA1 implies SA2
+
+SA1 implies that every $y \in Y$ has the same $x \in X$ whose pair is included in $F$. If this is true, it follows that there exists an $x$ for every $y$. It is not true that because there exists and $x$ for every $y$ implies that the same $x$  guarantees that $(x,y)$ is in the set $F$ for every y. 
+
+
+
+
+
+

@@ -1,0 +1,180 @@
+---
+title: "Exercise Set 3"
+author: "David Zynda"
+date: "July 24, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (1) The set $\mathbb{R}^\infty$ of sequences of real numbers is a vector space under the usual component-wise definitions of vector addition and scalar multipliaction:
+
+$$(x_1,x_2,...) + (y_1,y_2,...) := (x_1+y_1,x_2+y_2,...)$$
+$$\alpha(x_1,x_2,...) = (\alpha x_1, \alpha x_2,...)$$
+
+_Verify that the set of $l^\infty$ of bounded sequences of real numbers, with the operations of vector addition and scalar multiplication it inherits from $\mathbb{R}^\infty$, is a vector subspace of $\mathbb{R}^\infty$. _
+
+A sequence $(x_n)^\infty_1 \in \mathbb{R}$ is bounded if $\exists M \in \mathbb{R} : \forall n \in \mathbb{N}: |x_n| \le M$ 
+
+
+The infinite bounded sequence $l^\infty$ is not all that different than the $\mathbb{R}$ sequence defined above. In a similar manner shown above, $l^\infty$ is also closed under addition and scalar multiplication. 
+
+(i) Let $M_1, M_2 \in \mathbb{R}$ and let the infinite sequences $(x_n)_1^\infty$ $(y_n)_1^\infty$ be bounded sequences such that:
+
+$$\forall n \in \mathbb{N}: |x_n| \le M_1, \space |y_n| \le M_2$$
+Then:
+
+$|(x_n)_1^\infty + (y_n)_1^\infty| \le |(x_1,x_2,...)| + |(y_1, y_2,...)| = |(x_1 + y_1, x_2 + y_2,...)| \le M_1+M_2 = M$ 
+
+Hence, the infinite sequence is closed under addition.
+
+Let $\lambda \in \mathbb{R}$ and let $(x_n)_1^\infty$ again be a bounded set like defined above such that . Then: $\exists M \in \mathbb{R} : \forall n \in \mathbb{N}: |x_n| \le M$
+
+$|\lambda x_n| = |\lambda||x_n| \le |\lambda|M$
+
+So, the sequence is also closed under scalar multiplication. It is sufficient to that a show that this sequence is a vector subspace provided that it met the two criteria above and is not empty. It is also the case that it is not empty, consider: $\frac{1}{n^2}$ whose sum not only converges but whose sequence is bounded by zero from below also. With this example, there is at least one infinite sequence in this sequence showing that it is not empty. 
+
+
+## (2)  Let $S$ be the set of all real sequences that have only a finite number of non-zero terms. Is $S$ a vector subspace of $\mathbb{R}^\infty$? Is $S$ a vector subspace of $l^\infty$?
+
+$S$ is both a vector subspace under $\mathbb{R}^\infty$? and $l^\infty$. Regarding the former, $S$ is closed under addition and scalar multiplication much like $\mathbb{R}^\infty$ in question 1 above such that for the sequences $\{x_n\}, \{y_n\} \in S$: 
+
+$$(x_1,x_2,...) + (y_1,y_2,...) := (x_1+y_1,x_2+y_2,...)$$
+and for any $\lambda \in \mathbb{R}$:
+$$\lambda(x_1,x_2,...) = (\lambda x_1, \lambda x_2,...)$$
+So, $S$ is closed under $(V1)$ and $(V2)$. Additionally, it is nonempty, e.g. let one possible subset be:
+$${x_n} = (1,0,0,0,....)$$
+
+So, $S$ is a vector subspace of  $\mathbb{R}^\infty$.
+
+Additionally, because $S$ has a finite number of nonzero terms, must be bounded. That is $\exists M \in \mathbb{R}: \forall n \in \mathbb{N}: |x_n| \le M$. Assume there is at least one nonzero term. Then, the $sup{|x_n|}$ is the bound for which all $|x_n| \le M$.In fact, because all other nonzero terms are zero, then for every $|x_n|$, 0 is a lower bound. 
+
+So, the infinite sequence of $x_n$ possessing a finite number of nonzero terms is not only a subspace of $\mathbb{R}^\infty$, but also $l^\infty$ since it is also a bounded sequence. 
+
+
+## (3) Provid a proof of the following proposition:
+
+_If dim $V=n$ and $v_1,...,v_n$ span $V$, then $\{v_1,...v_n\}$ is a basis of $V$_
+
+By definition, the span of the set $S \subseteq V$ is the set of all linear combinations of vectors in $S$ in $V$. The basis of vector space $V$ is the linearly independent subset of $V$ that spans $V$. 
+
+Assume by contradiction that $dim \space V = n$ and $\{v_1,...,v_n\}$ span $V$ but $\{v_1, ...,v_n\}$ is _NOT_ a basis of $V$. 
+
+Under this assumption, a basis will be follow from either one of two cases:
+
+(i) Case I: the true basis will have a larger $n$ dimension than $V$. Let the basis $\mathbb{B}$ of $V$ be composed of $m$ vectors where $m > n$. If the dimension of $V$ is less than that of the basis, this would indicate the the basis can be formed by linear combinations of $V$ itself alone. This would indicate that the basis is linearly dependent since it would have a non-trivial solution. Also, by definition, the basis must be linearly independent. Thus, under these assumptions, there is a contradiction, and the true basis cannot have a dimensionality larger than the vector subspace it spans. 
+
+(ii) Case II: The true basis has a lesser dimension than $V$. Let the basis $\mathbb{B}$ of $V$ be composed of $m$ vectors where $m < n$. However, this would imply that the vectors do not span $V$. By definition, a basis must span the entire vector space. Thus, $\mathbb{B}$ both a basis and not a basis. So, by contradiction, it is shown that a basis of a vector space cannot have a lesser dimension than $V$. 
+
+Given the outcomes of case (i) and case (ii), it must be that dim $V=n$ and $v_1,...,v_n$ span $V$, then $\{v_1,...v_n\}$ is a basis of $V$.
+
+
+## (4) Does $\mathbb{R}^\infty$ have a finite basis?
+
+### (a) Prove that the set $\{a^1,a^2\}$ in which $a = (1,2,1)$ and $b = (2,1,1)$ is not a basis of $\mathbb{R}^3$
+
+A basis of a vector space V is a linearly independent subset of $V$ that spans $V$. The span is the set of all linear combinations of vectors in a set $S$.
+
+By definition then, it would be sufficient to show that there exists at least one vector which does not span the set $\{a^1,a^2\}$ in order to say that set is not a basis. In other words there could be a linear combination of the set which does not reach somewhere in $\mathbb{R}^3$. 
+
+To do so, let $A$ be the matrix with the following representation:
+
+$$A = 
+\begin{bmatrix}
+    1 & 2  & | a   \\
+    2 & 1  & | b  \\
+    1 & 1  & | c 
+\end{bmatrix}$$
+
+Let $(a,b,c)$ be a solution to $f(x) = Ax$. Putting $A$ into row echelon form yields the following:
+
+$$A = 
+\begin{bmatrix}
+    1 & 2  & | a   \\
+    0 & 1  & |  \frac{2a}{3} + \frac{b}{3} \\
+    0 & 0  & | -\frac{2a}{3} + \frac{b}{3} + c - a
+\end{bmatrix}$$
+Consequently, there is more than a nontrivial solution. In fact, the final equation on the bottom of the matrix can be simplified to:
+
+$$
+-\frac{a}{3} + \frac{b}{3} + c = 0
+$$
+So, for any $a, b$ or $c$, this condition must be fulfilled. As such, the vector $(0,0,1)$ is not about of the solution, so the two vectors above cannot be a basis for $\mathbb{R}^3$.
+
+Moreover, a basis must be linearly independent. And this is clearly not. 
+
+### (b) Prove that no subset of $\mathbb{R}^3$ with only two vectors can be a basis of $\mathbb{R}^3$
+
+A basis by definition is a linearly independent subset of a vector space which spans the entire vector space, i.e., the vector space houses all linear combinations of the basis. These are the two conditions necessary. 
+
+First, the basis should be linearly independent. That is, only the trivial case should yield that the solution to $f(x) = Ax$ be the 0 vector. This would imply that for all $a_n$, $a_1v_1 + a_2v_2 + a_3v_3 +...+a_nv_n = 0$ only if $a_1 = a_2 = ... = a_n = 0$. As was seen in part(a), any two subsets cannot be a basis for $\mathbb{R}^3$ because they will always be linearly dependent and not cover the whole vector space in $\mathbb{R}^3$
+
+Secondly, the basis must span the entire space. That is, for every vector $x$ there are there is an $a_1, ..., a_n$ such that $x = a_1v_1 + a_2v_2 +... + a_nv_n$. Two vectors in $\mathbb{R}^3$ would make a plane, and not a three dimensional space. As such, much of the vector space would not be span. In other words, there would be many vectors which would not be possible with any linear combination of $a_n$. It would take three linearly independent vectors to span $\mathbb{R}^3$ and guarantee any linear combination is possible.
+
+### (c) Prove that the set $\{a^1, a^2\}$ in which $a^1 = (1,2,1,1,1,...)$ and $a^2 = (2,1,1,1,1,...)$ is not a basis of $\mathbb{R}^\infty$
+
+Much for the same reasons of part (a) and (b), it follows that $\{a^1, a^2\}$ cannot be a basis either. No two  sets of vectors in $\mathbb{R}^\infty$ can be a basis. It would not cover the whole space, as some particular points in $\mathbb{R}^\infty$ would be left out. That is to say, there are more equations than there are variables, and it is not possible for all these equations to be linearly independent. This is evident from the fact that there are many series of $1's$ in these sets ${a}$. Necessarily, some would be eliminated, and there would be more than one trivial solution. A basis admits of only the nontrivial solution.
+
+### (d) Prove that no subset of $\mathbb{R}^\infty$ with only a finite number of vectors can be a basis of $\mathbb{R}^\infty$. 
+
+A finite number of vectors would not span the entire space $\mathbb{R}^\infty$. If it does not span the entire space, then there would be some some $b$ in $Ax = b$ which could not be solved for, i.e, the vectors would not cover the whole space and all possibilities of linear combinations. Furthermore, any combination would not be linearly independent because there would always be more equations than unknowns. This overdetermined system would never have a solution for all $b$, and may not have a solution at all. 
+
+
+## (5) Let $f: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ be the linear function for which:
+
+(i) $f(1,0,0) = (1,1,1)$
+(ii) $f(0,1,0) = (0,1,0)$
+(iii) $f(0,0,1) = (2,3,2)$
+
+
+### (a) Write down the matrix $A$ that defines $f$ the matrix for which $f(x) = Ax$ for all $x \in \mathbb{R}^3$
+
+Let: 
+
+$$A = 
+\begin{bmatrix}
+    1 & 0 & 2   \\
+    1 & 1 & 3  \\
+    1 & 0 & 2 
+\end{bmatrix}$$
+
+
+### (b) Is $f$ one-to-one? Onto $\mathbb{R}^3$?
+
+Unfortunately, the matrix $A$ is singular and therefore has no inverse as is evident by just looking at it. So, we check the cases one by one. 
+
+__One-to-one__:
+
+The linear function $f$ cannot be one-to-one. Through the use of elementary row operations and Gaussian elimination, the matrix can be represented as:
+
+
+$$A = 
+\begin{bmatrix}
+    1 & 0 & 2   \\
+    0 & -1 & -1  \\
+    0 & 0 & 0 
+\end{bmatrix}$$
+
+Consequently, the number of 
+
+
+The linear function $f$ is not one-to-one because each solution has more than one possible $x$ value. Solving the system of equations with the solution $(0,1,0)$ yields infinitely many solutions, because it has a free variable. In fact, setting $b = [0,1,0]$ yields:
+
+$$x_1 = -2x_3$$
+$$x_2 = -1 - x_3$$
+So, the solution will depend upon whatever value is chosen for $x_3$. As such it is not true that there exists a unique $x$ for each $y$. So, the function is not one-to-one. 
+
+__Onto__
+
+The function will not be unto. Because there is a free variable, this is not a basis of $\mathbb{R}^3$. Instead of three linearly independent vectors, we are only left with two which cannot span the whole space $\mathbb{R}^3$. That is, not all linear compbinations would be possible, and there are nontrivial solutions to the system. If this function cannot map on to the entirety of $\mathbb{R}^3$, and it does not, it cannot be onto. 
+
+
+### (c) Determing the range of $f$. 
+
+The range will be the first two columns with pivot points. So the column space, indicative of the range, will be the first two columns of the matrix: $[1,0,0]^T, [0,1,0]^T$ So, the dimension of the range will actually be 2. 
+
+
+
+
