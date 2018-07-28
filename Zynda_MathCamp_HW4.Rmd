@@ -9,9 +9,9 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-A set is convex if and only if every convex combination of vectors in S is also in S. 
+## (1) A set is convex if and only if every convex combination of vectors in S is also in S. 
 
-(1) If every combination of vectors in S is also in S, then a set is convex. 
+### (i) If every combination of vectors in S is also in S, then a set is convex.  
 
 This proof is evident from the definition of a convex set, that is:
 
@@ -19,5 +19,84 @@ A set S is convex in vector space $V$ if for any two points $x,y$ in $S$ and $\l
 
 Clearly, if every combination of vectors is convex in $S$, then there will be two that fulfill that definition of convexity.
 
-(2) A set is convex if every convex combination of vectros in $S$ is also in $S$. 
+### (ii) A set is convex if every convex combination of vectros in $S$ is also in $S$.
+
+Let $V$ be a convex vector space such that:
+$$(1-\lambda) y + \lambda x = v \subseteq V$$
+For $\lambda > 0$. Now, let $(1-\lambda) = \lambda_2$ and denote $\lambda$ as $\lambda_1$. Then, 
+$$\lambda_2 y + \lambda_1 x = v \subseteq V$$
+Then, for all $\{\lambda_n\}$, $\lambda_i \ge 0$ and $\sum^n_{i=1} \lambda_i = 1$
+
+Now, for the first step in the induction proof, let $a$ and $b$ be in the convex set $V$ such that 
+$$\lambda_1 a + \lambda_2 b = v \subseteq V$$
+Let $\lambda_2 = \lambda_2^* + \lambda_3 = (1 - \lambda_1)$ such that $(\lambda_1 + \lambda_2^* + lambda_3 = 1)$.
+Multiply $b$ by a factor of 1, but expressed by:
+$\frac{\lambda_2^* + \lambda_3}{\lambda_2^* + \lambda_3}$
+
+Such that:
+
+$$\lambda_1 a + (\lambda_2^* + \lambda_3)(\frac{\lambda_2^* + \lambda_3}{\lambda_2^* + \lambda_3})b$$
+Now, decompose $b$ into two separate vectors following the scalar fraction:
+
+$$\lambda_1 a + (\lambda_2^* + \lambda_3)(\frac{\lambda_2^* b^*}{\lambda_2^* + \lambda_3} + \frac{\lambda_3 c }{\lambda_2^* + \lambda_3} )$$
+Then, with the help of algebra, it can be shown that any convex combination of 2 vectors in a convext set imply that there are three combinations of complex vectors in that same convex set such that:
+
+$$\lambda_1a + \lambda_2^* b^* + \lambda_3c = v \subseteq V$$
+Where each $\lambda$ is nonnegative and the sum of all $\lambda$ is 1. 
+
+Step 2 now requires showing that this is the case for $(n+1)$
+
+Similar to above, let $v_1, ..., v_n$ be a series of vectors in a convex set. Let $\lambda_1, ... \lambda_n$ be scalars of the vectors which are nonnegative and for which the sum of all scalars is equal to 1. Then, we have:
+
+$$\lambda_1 v_1 + \lambda_2 v_2 +... + \lambda_nv_n = v \subseteq V$$
+In a similar manner of the first part of the proof, let $\lambda_n = (\lambda_n^* + \lambda_{n+1})$.
+Now, let:
+$$\lambda_1 v_1 + \lambda_2 v_2 +... + (\lambda_n^* + \lambda_{n+1})(\frac{\lambda_n^* + \lambda_{n+1}}{\lambda_n^* + \lambda_{n+1}})v_n = v$$
+$$\lambda_1 v_1 + \lambda_2 v_2 +... + ((\lambda_n^* + \lambda_{n+1})(\frac{\lambda_n^* v_n^*}{\lambda_n^* + \lambda_{n+1}} + \frac{\lambda_{n+1} v_{n+1} }{\lambda_n^* + \lambda_{n+1}} ) = v$$
+
+For which we now have: 
+$$\lambda_1 v_1 + \lambda_2 v_2 +... + \lambda_n^* v_n^* + \lambda_{n+1} v_{n+1} = v$$
+And thus, any convex combination of $n$ vectors will guarantee that there exists a complex combination of $n+1$ vectors. 
+
+By the principle of induction, it is true that if $V$ is a convex set, then every convex combination of vectors in S is also in S.
+
+
+
+## (2) Write out a careful proof of Theorem 21.12. The proof is straightforward but should help one's understaind of quasiconcave functions and reinforce one's ability to prove theorems. 
+
+Theorem 21.12:
+
+Let $f$ be a function defined on a convex set $U$ in $\mathbb{R}^n$. Then, the following statements are equivalent to each other:
+
+(a) $f is a quasiconcave function on $U$. 
+(b) For all $x,y \in U$ and all $t \in [0,1]$, $f(x) \ge f(y) \implies f(tx +(1-t)y \ge f(y)$
+(c) For all $x,y \in U$ and all $t \in [0,1]$, $f(tx+(1-t)y \ge min\{f(x), f(y)\}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
