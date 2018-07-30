@@ -29,7 +29,7 @@ Then, for all $\{\lambda_n\}$, $\lambda_i \ge 0$ and $\sum^n_{i=1} \lambda_i = 1
 
 Now, for the first step in the induction proof, let $a$ and $b$ be in the convex set $V$ such that 
 $$\lambda_1 a + \lambda_2 b = v \subseteq V$$
-Let $\lambda_2 = \lambda_2^* + \lambda_3 = (1 - \lambda_1)$ such that $(\lambda_1 + \lambda_2^* + lambda_3 = 1)$.
+Let $\lambda_2 = \lambda_2^* + \lambda_3 = (1 - \lambda_1)$ such that $(\lambda_1 + \lambda_2^* + \lambda_3 = 1)$.
 Multiply $b$ by a factor of 1, but expressed by:
 $\frac{\lambda_2^* + \lambda_3}{\lambda_2^* + \lambda_3}$
 
@@ -68,14 +68,112 @@ Theorem 21.12:
 
 Let $f$ be a function defined on a convex set $U$ in $\mathbb{R}^n$. Then, the following statements are equivalent to each other:
 
-(a) $f is a quasiconcave function on $U$. 
-(b) For all $x,y \in U$ and all $t \in [0,1]$, $f(x) \ge f(y) \implies f(tx +(1-t)y \ge f(y)$
+(a) $f$ is a quasiconcave function on $U$. 
+(b) For all $x,y \in U$ and all $t \in [0,1]$, $f(x) \ge f(y) \implies f(tx +(1-t)y) \ge f(y)$
 (c) For all $x,y \in U$ and all $t \in [0,1]$, $f(tx+(1-t)y \ge min\{f(x), f(y)\}$
 
 
+### (i) $a \implies b$
+
+Let $f(y)$ be defined as $C^+_a$ such that $f(y) > a$. Also, let $f(x) > f(y)$. Then, $f(x) > a$ too. and Consequently, $f(tx +(1-t)y) \ge f(y) > a$. 
+
+### (ii) $b \implies c$
+
+Let $f(x) > f(y)$. Then, we know that $f(tx +(1-t)y) \ge f(y)$. 
+Let $f(x) < f(y)$. Then, we know that $f(tx + (1-t)y) \ge f(x)$. 
+Let $f(x) = f(y)$. Then, we know that $f(tx +(1-t)y) = f(x) = f(y)$
+
+These results can be summarized as follows:
+$$f(tx+(1-t)y) \ge min\{f(x), f(y)\}$$
+
+which concludes the proof. 
 
 
+### (iii) $c \implies a$
 
+Let $f(x)$ and $f(y)$ both be greater than $a$. Then, $min\{f(x), f(y)\} > a \implies min\{f(x), f(y)\} \in C$. Then, this means that $f(tx + (1-t)y) > a$. So, $f(tx + (1-t)y) \ge f(x) \in C$
+
+## (3) Here is a useful theorem: If $f_1$ and $f_2$ are strictly concave functions defined on a convex subset of a vector space $V$, then the sum $f_1+f_2$ is also strictly concave. 
+
+### (a) Provide a proof of the theorem above.
+
+Define concave functions $f(x)$ and $g(x)$ on a convex subset $X$ where:
+
+$$\forall x,y \in X, \lambda \in [0,1]: f((1-\lambda)x + \lambda y) \ge (1-\lambda)f(x) + \lambda f(y)$$
+$$\forall a,b \in X, \gamma \in [0,1]: g((1-\gamma)a + \gamma b) \ge (1-\gamma)g(a) + \gamma g(b)$$
+Now, add to inequality regarding $f(x)$ the function $g(x)$ to both sides such that:
+
+$$f((1-\lambda)x + \lambda y) + g((1-\gamma)a + \gamma b) \ge (1-\lambda)f(x) + \lambda f(y) + g((1-\gamma)a + \gamma b)$$
+
+
+Since $g((1-\gamma)a + \gamma b) \ge (1-\gamma)g(a) + \gamma g(b)$ it follows that:
+
+$$f((1-\lambda)x + \lambda y) + g((1-\gamma)a + \gamma b) \ge (1-\lambda)f(x) + \lambda f(y) + g((1-\gamma)a + \gamma b) \ge (1-\lambda)f(x) + \lambda f(y) + (1-\gamma)g(a) + \gamma g(b)$$
+$$\implies f((1-\lambda)x + \lambda y) + g((1-\gamma)a + \gamma b) \ge (1-\lambda)f(x) + \lambda f(y) + (1-\gamma)g(a) + \gamma g(b)$$
+
+Hence, it follows that the sum of the two concave functions defined on a convex set are also concave. 
+
+### (b) Let $u(x_1, x_2) = \sqrt{x_1} + \sqrt{x_2}$ be a utility function defined on $\mathbb{R}^2$. The real function $f(z) = \sqrt{z}$ is strictly concave. Explain why the theorem does not apply in this situation.  
+
+The theorem does not apply to this situation because the utility function is defined on all of $\mathbb{R}^2_+$. This is no guarentee that whatever set within $\mathbb{R}^2_+$ for which the utility function is used is itself a convex set. Notice that the theorem defines the functions on an interval or convex subset. That detail is excluded in this utility function. 
+
+Additionally, because the utility function maps to $\mathbb{R}^2_+$ there is also no guarantee within the bounds of how this function is defined that the resulting set will be concave. 
+
+### (c) If $X_1$ and $X_2$ are intervals in $\mathbb{R}$ and if $f:X_1 \rightarrow \mathbb{R}$ and $f:X_2 \rightarrow \mathbb{R}$ are strictly convex functions, the the function $f: X_1 \times X_2 \rightarrow \mathbb{R}$ defined by $f(x_1,x_2) = f_1(x_1) + f_2(x_2)$ is strictly concave. Provide a proof of this theorem. 
+
+This theorem is really no different than that of part (a). What is different is what the strictly concave functions are defined on. One assumes a convex subset of vector space, and this one is on intervals in $\mathbb{R}$ Now, an interval in $\mathbb{R}$ is going to be a convex subset. For any two points which form an interval on a line, there exists a convex combination that is contained within that interval. This really falls from the definition of a convex set:
+
+$$\forall x,y \in S, \forall \lambda \in [0,1]: (1-\lambda)x + \lambda y \subseteq S$$
+Clearly any two points $(x,y)$ on a one dimensional line will be convex under this definition since there can be a convex combination between them provided that $\lambda \in [0,1]$. 
+
+Now, if these two intervals are a convex set, and $f_1$ and $f_2$ are defined on them, then the theorem begins to look a lot more similar to part (a). But, there is one more detail. Notice that this function maps $\mathbb{R} \rightarrow \mathbb{R}$. So it takes functions from convex subsets inbedded in intervals and maps them to convex subsets in the forms of intervals. Because they are strictly concave functions, the addition of the two will be strictly concave. 
+
+## (4) Exercise #10.16 of Simon and Blume
+
+### (a) Prove that each of the following norms are in $\mathbb{R}^2$
+$$||(u_1,u_2)|| = |u_1| + |u_2|$$
+$$||(u_1,u_2)|| = max\{|u_1|, |u_2|\}$$
+
+________________________________________________________________________________
+To prove something is in $\mathbb{R}$ in general, one must show that:
+
+(i) Contains the zero vector. 
+(ii) Closed under scalar multiplication
+(iii) Closed under addition.  
+
+
+For the first norm (the taxi-cab norm):
+
+_Additivity_
+
+Let $u = (u_1, u_2)$
+
+$$||u + v|| = |u_1 + v_1| + |u_2 + v_2| \le |u_1| + |u_2| + |v_1| + |v_2| = ||u|| + ||v||$$ 
+
+_Scalar Multiplication_
+$$||\lambda u|| = |\lambda(u_1 + u_2)| = |\lambda||u_1 + u_2| = \lambda||u||$$
+
+
+_Zero Element_
+
+Let $u_1, u_2 = 0$. Then $$u$$ has the zero element. 
+
+
+__For the second norm:__
+
+Let $u = (u_1, u_2)$
+
+$$||u + v|| = max\{|u_1 + v_1|, |u_2 + v_2|\} \le max\{|u_1| + |v_1|, |u_2| + |v_2|\} \le max\{|u_1| + |u_2|\}\ + max\{|v_1| + |v_2|\}$$
+$$max\{|u_1| + |u_2|\}\ + max\{|v_1| + |v_2|\} = ||u|| + ||v||$$
+
+$$||\lambda u|| = max\{|\lambda u_1| + |\lambda u_2|\}= |\lambda|max\{|u_1| + |u_2|\} = |\lambda| ||u|| $$
+
+Lastly, the zero vector exists if $u_1 = u_2 = 0$. 
+
+
+### (b) What are the other names. 
+
+I think the first is just called the max norm, and the last is the taxi-cab or Manhattan Norm. 
 
 
 
