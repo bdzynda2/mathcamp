@@ -1,0 +1,135 @@
+---
+title: "Exercise Set 5"
+author: "David Zynda"
+date: "August 2, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (1) Prove that if a sequence $\{x(n)\}$ converges to $\bar{x} \in \mathbb{R}^\ell$ then for each $k \in \{1,...,\ell\}$ the component sequence $\{x_k(n)\}$ converges to $\bar{x}_k$. 
+
+Suppose by contradiction that the sequence $\{x(n)\} \rightarrow \bar{x} \in \mathbb{R}^\ell$ but that $\exists k \in \{1,...,\ell\} : \{x_k(n)\} \nrightarrow \bar{x}_k$
+
+We assumed $\{x(n)\}$ converges to $\bar{x}$ such that:
+
+$$\forall \varepsilon > 0 : \exists \bar{n} \in \mathbb{N}: |x_{\bar{n}} - \bar{x}| < \varepsilon$$
+Let $\bar{n} = \{x_{1,\bar{n}},x_{1,\bar{n}}, ... x_{\ell,\bar{n}}\}$. And $\{x_n\}$ by definition would be $\{x_{1,n}, x_{2,n}, ..., x_{\ell,n}\}$
+
+Because $\{x(n)\} \rightarrow \bar{x} \in \mathbb{R}^\ell$ we have:
+
+$$\forall \varepsilon > 0 : \exists \bar{n} \in \mathbb{N} : |\{x_{1,n}, x_{2,n}, ..., x_{\ell,n}\} - \{x_{1,\bar{n}},x_{1,\bar{n}}, ... x_{\ell,\bar{n}}\}| < \varepsilon$$
+however, we noted that for some  $\exists k \in \{1,...,\ell\} : \{x_k(n)\} \nrightarrow \bar{x}_k$. Then, it is not true that: 
+
+$$\forall \{x_k\}, k \in \{1,..,\ell\}: |\{x_{1,n}, x_{2,n}, ..., x_{\ell,n}\} - \{x_{1,\bar{n}},x_{1,\bar{n}}, ... x_{\ell,\bar{n}}\}| < \varepsilon$$
+
+In fact, there would be an $\{x_k\}$ for which $|x_k - x_{k, \bar{n}}| > \varepsilon$
+
+So, there is a contradiction. There cannot be a component of $\{x(n)\}$ which does not converge if $\{x(n)\} \rightarrow \bar{x}$
+
+
+## (2) Prove directly from the definition of a compact set (in which every sequence has a subsequence that converges to a point in a set) that every finite set of points in $\mathbb{R}^n$ is compact. 
+
+
+Let $a,b$ be any two finite points in $\mathbb{R}^n$. Contruct a closed interval from them $[a,b] \in \mathbb{R}^n$ As an interval of finite points, I assume the interval is closed. If it were open around points $a$ and $b$, then there would be a infinite series of points around the ball.
+
+Let $\{x(n)\}$ be a sequence contained within the closed interval. 
+
+The set must be bounded. By definition:
+
+$$\exists M > 0: \forall n \in \mathbb{N} : |x_n| \le M$$
+Choose $a, b$ as $M$. 
+
+By the Bolzano-Weierstrass Theorem, we know that every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence. Hence, any sequence $\{x_n\}$ of the finite set $[a,b]$ in $\mathbb{R}$ has a convergent subsequence. Since the set is closed, the subsequence must converge to $a$ or $b$. Then, $[a,b]$ must be compact. And, so, any finite set in $\mathbb{R}^n$ must also be compact.  
+
+## (3) Determine whether the utility function $u: \mathbb{R}^2_+ \rightarrow \mathbb{R}$ is continuous if u is defined by:
+
+$$u(x_1, x_2) =  \begin{cases} 
+                    x_1x_2 & x_1x_2 \le 4 \\
+                    4 & 4 < x_1x_2 < 9 \\
+                    x_1x_2 - 5 & x_1x_2 \ge 9 
+                  \end{cases}$$ 
+
+
+Let $(x_1, x_2) = (2,2)$, or any other value such that $x_1x_2$ = 4
+
+$$\lim_{(x_1,x_2) \rightarrow 4^+} = 4 = u(2,2) = \lim_{(x_1,x_2) \rightarrow 4^-}$$
+
+Let $(x_1, x_2) = (3,3)$, or any other value such that $x_1x_2$ = 9
+
+$$\lim_{(x_1,x_2) \rightarrow 9^+} = 4 = u(3,3) = 9 - 5  = \lim_{(x_1,x_2) \rightarrow 9^-}$$
+Since $\lim_{(x_1,x_2) \rightarrow 9^-} = (x_1x_2) - 5 = 9 - 5 = 4$.
+
+
+So, the utility function does appear continuous, since limits from the left hand side equal the value of the limits on the right hand side. 
+
+
+
+
+
+
+## (4) Let $f: \mathbb{R} \rightarrow \mathbb{R}$ be a real function and let $\bar{x} \in \mathbb{R}$ be a real number at which the first, second, and third derivatives of $f$ all exist. Verify that the third-degree Taylor polynomial
+
+$$P_3(\Delta x): = f(\bar{x}) + f'(\bar{x})\Delta x + \frac{1}{2} f''(\bar{x})(\Delta x)^2 + \frac{1}{6} f'''(\bar{x})(\Delta x)^3$$
+that we use to approximate the function $f$ near $\bar{x}$ has the following properties:
+
+
+### (a) Same value as $f$ at $\bar{x}$
+
+$$P(\Delta x = 0) = f(\bar{x}) + f'(\bar{x})(0) + \frac{1}{2} f''(\bar{x}) (0)^2 + \frac{1}{6} f'''(\bar{x})(0)^3$$
+$$ = f(\bar{x})$$
+
+### (b) The same slope
+$$P'_3(\Delta x) =  f'(\bar{x}) +  f''(\bar{x})(\Delta x) + \frac{1}{2} f'''(\bar{x})(\Delta x)^2$$
+$$P'_3(\Delta x = 0) =  f'(\bar{x}) +  f''(\bar{x})(0) + \frac{1}{2} f'''(\bar{x})(0)^2$$
+$$P'_3(0) =  f'(\bar{x})$$
+
+### (c) The same curvature
+
+$$P''_3(\Delta x) = f''(\bar{x}) + f'''(\bar{x})(\Delta x)$$
+$$P''_3(\Delta x = 0) = f''(\bar{x}) + f'''(\bar{x})(0)$$
+$$P''_3(0) =  f''(\bar{x})$$
+
+### (d) The same third derivative
+
+$$P'''_3(\Delta x) =  f'''(\bar{x})$$
+
+$$P'''_3(\Delta x = 0) =  f'''(\bar{x})$$
+
+## (5) Determine whether: (a) the conjecture is false (show counterexample and point out why proof is not valid), (b) the conjecture is true and the proof is true, or (c) the conjecture is true and the proof is false (point out why its invalid and fix it or give a correct proof).
+
+__Conjecture 1__: Let $X' = [0,1]$ the closed unit interval in $\mathbb{R}$ with the usual norm. The set $S = [0, \frac{1}{2}) = \{x \in X'| 0 \le x < \frac{1}{2}\}$ is open in $X'$ (i.e. open relative to $X'$). 
+
+__Proof__: Let $V = (-\frac{1}{2}, \frac{1}{2})$, the open interval in $\mathbb{R}$ between $-\frac{1}{2}, \frac{1}{2}$. Then, $S = V \cap X'$ and $V$ is open in $\mathbb{R}$, so $S$ is open in $X'$. 
+
+
+The conjecture is true and the proof is valid. 
+
+_____________________________________________________________________________________________________
+
+__Conjecture 2__: Let $\{x_n\}$ be a sequence in $\mathbb{R}^\ell$. If for each $k \in \{1,...,\ell\}$ the component sequence $\{x_k(n)\} \rightarrow \bar{x}_k \in \mathbb{R}$ then $\{x(n)\}$ converges to $\bar{x}$. 
+
+__Proof__: Let $\varepsilon > 0$. Then for every $k \in \{1, ...\ell\}$ there is an $\bar{n}_k \in \mathbb{N}$ such that $n > \bar{n}_k \implies |x_k(n) - \bar{x}_k| < \frac{1}{\ell}\varepsilon$. Therefore, $\sum^\ell_{k-1} |x_k(n) - \bar{x}_k| < \varepsilon$ or $||x(n) - \bar{x}||_1 < \varepsilon$. Since this is true for every $\varepsilon > 0$, $\{x(n)\}$ converges to $\bar{x}$. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
