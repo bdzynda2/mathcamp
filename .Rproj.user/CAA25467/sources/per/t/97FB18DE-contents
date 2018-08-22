@@ -113,6 +113,20 @@ __Conjecture 2__: Let $\{x_n\}$ be a sequence in $\mathbb{R}^\ell$. If for each 
 
 __Proof__: Let $\varepsilon > 0$. Then for every $k \in \{1, ...\ell\}$ there is an $\bar{n}_k \in \mathbb{N}$ such that $n > \bar{n}_k \implies |x_k(n) - \bar{x}_k| < \frac{1}{\ell}\varepsilon$. Therefore, $\sum^\ell_{k-1} |x_k(n) - \bar{x}_k| < \varepsilon$ or $||x(n) - \bar{x}||_1 < \varepsilon$. Since this is true for every $\varepsilon > 0$, $\{x(n)\}$ converges to $\bar{x}$. 
 
+The conjecture is true and the proof is valid
+
+_____________________________________________________________________________________________________
+
+__Conjecture 3__: The set $S = \{x \in \mathbb{Q} | 0 \le x \ \sqrt{2}\}$ the set of nonnegative rational numbers less than $\sqrt{2}$ is not closed in $\mathbb{Q}$.
+
+__Proof__: Let $\{x_n\}$ be a sequence of ratioinal numbers in $S$ that converges to $\sqrt{2}$. Since $\sqrt{2} \notin S, S$ is not a closed set. 
+
+The conjecture is not true. This set is neither closed nor open (to correct the conjecture). Allow the proof to also admit that between every rational number is a real (irrational) number to show that is neither closed nor open. 
+
+__Conjecture 4__: If $\{x_n\}$ converges to $\bar{x}$ in $\mathbb{R}^\ell$ then every subsequence of $x_n$ converges to $\bar{x}$
+
+The conjecture is true and the proof is valid. 
+
 
 
 
