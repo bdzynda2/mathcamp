@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "left" : {
         "panelheight" : 902,
@@ -11,4 +12,19 @@
         "topwindowstate" : "NORMAL",
         "windowheight" : 940
     }
+=======
+{
+    "left" : {
+        "panelheight" : 778,
+        "splitterpos" : 323,
+        "topwindowstate" : "NORMAL",
+        "windowheight" : 816
+    },
+    "right" : {
+        "panelheight" : 778,
+        "splitterpos" : 485,
+        "topwindowstate" : "NORMAL",
+        "windowheight" : 816
+    }
+>>>>>>> db21bde21cc3f56dde7d8f64e866d06c9724847c
 }

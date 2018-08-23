@@ -1,0 +1,64 @@
+---
+title: "Econ 519 Homework 1"
+author: "David Zynda"
+date: "August 27, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (1) Prove the following statement:
+For $x \ne 1$ and $\forall n \in \mathbb{N}$
+$$\sum^n_{k=0} x^k = \frac{1-x^{n+1}}{1-x}.$$
+
+Step 1: Let $n = 1$. Then,
+
+$$\sum^1_{k=0} x^k = \frac{1-x^{0+1}}{1-x} + \frac{1-x^{1+1}}{1-x} = \frac{1 + x^2}{1 - x}.$$
+
+
+$$=\frac{(1+x)(1-x)}{(1-x)} = (1+x) = \frac{1-x^{n+1}}{1-x}, n=1$$
+
+
+Step 2: For $n+1$ show that the geometric sum is $\frac{1 - x^{n+2}}{1-x}$. 
+
+$$\sum^{n+1}_{k=0} x^k =\sum^{n}_{k=0} x^k + x^{k+1} = \frac{1-x^{n+1}}{1-x} + x^{n+1}$$
+
+$$= \frac{1-x^{n+1} + (1-x)(x^{n+1})}{1-x} = \frac{1-x^{n+1} + x^{n+1} - x(x^{n+1})}{1-x}$$
+
+$$= \frac{1-x^{n+1} + x^{n+1} - x^{n+2}}{1-x} = \frac{1 - x^{n+2}}{1-x}$$
+
+## (2) Prove the following statement.
+
+If $A$ and $B$ are sets, then $A \cap (B - A) = \emptyset$.
+
+$$(B - A) \iff B \setminus A \iff B \cap A^c$$
+$$A \cap (B - A) = B \cap A^c \iff A \cap B \cap A^c \iff \emptyset$$
+
+
+## (3) Prove the following statement.
+
+Suppose that $n \in \mathbb{Z}$. If $n^2$ is odd, then $n$ is odd.
+
+Suppose by contradiction that $n^2$ is odd but that $n$ is even. 
+
+By definition, an even number is $2m$ where $m \in \mathbb{Z}$. Let $b = 2m$ for some $m \in \mathbb{Z}$. Then, $b^2 = (2m)^2 = 4m^2$ So, $b^2$ is even. But we assumed it was odd. Then, through contradiction, it is clear that if $n^2$ is odd, then $n$ is odd. 
+
+
+## (4) Prove the following statment. 
+
+$$\big( \bigcup_{i \in I} A_i \big)^c = \bigcap_{i=1}(A_i)^c.$$
+
+$$\big( \bigcup_{i \in I} A_i \big)^c = (A_1 \cup A_2 \cup A_3 \cup ... \cup A_I)^c$$
+$$=A_1^c \cap A_2^c \cap A_3^c \cap ... \cap A_I^c = \bigcap_{i\in I} (A_i)^c$$
+
+
+
+
+
+
+
+
+
+
