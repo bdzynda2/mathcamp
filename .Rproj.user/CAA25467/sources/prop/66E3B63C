@@ -1,6 +1,14 @@
+<<<<<<< HEAD
+{
+    "cursorPosition" : "75,53",
+    "marks" : "<:59,21\n>:59,29",
+    "scrollLine" : "18",
+    "tempName" : "Untitled1"
+=======
 {
     "cursorPosition" : "75,53",
     "marks" : "<:0,0\n>:0,0",
     "scrollLine" : "0",
     "tempName" : "Untitled1"
+>>>>>>> db21bde21cc3f56dde7d8f64e866d06c9724847c
 }
