@@ -53,8 +53,25 @@ $$\big( \bigcup_{i \in I} A_i \big)^c = \bigcap_{i=1}(A_i)^c.$$
 $$\big( \bigcup_{i \in I} A_i \big)^c = (A_1 \cup A_2 \cup A_3 \cup ... \cup A_I)^c$$
 $$=A_1^c \cap A_2^c \cap A_3^c \cap ... \cap A_I^c = \bigcap_{i\in I} (A_i)^c$$
 
+## (5.1)  Is $\le$ and equivalence relation? Prove yes or explain why no!
 
 
+This is not an equivalnce relation. An equivalence relation must satisfy 3 things:
++ Must be reflexive
++ Must be symmetric
++ Must be transitive. 
+
+The relation $\le$ is reflexive and transitive. However, it is not symmetric. In fact, it is anti-symmetric:
+
+$$\forall x,y \in S: (x \le y) \land(y \le x) \implies x = y$$
+
+## (5.2) Give an example for a relation that is reflexive but not symmetric. 
+
+The example above suffices, or $\ge$. 
+
+$$\forall x \in S: x\ge x$$
+
+$$\forall x,y \in S: (x \ge y) \land(y \ge x) \implies x = y$$
 
 
 
