@@ -1,0 +1,36 @@
+---
+title: "Econ 519 HW 2"
+author: "David Zynda"
+date: "September 4, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (1) Prove the following statement. 
+
+_Let $X$ be a set and $\{G,. *\}$ a group. The set of functions of $X$ into $G$, endowed with the operation defined by the composition of images, i.e.,_
+
+$$\forall x \in X, (f *g)(x) = f(x) * g(x)$$
+_is a group._
+
+
+
+
+
+
+
+(2) Let $X$ be a non-empty set. Consider the set of all maps from $X$ to $\mathbb{R}$ denoted by $\mathscr{F} = \{f|f: X \rightarrow R\}$, and the subset of $\mathscr{F}$ consisting of all bounded maps from $X$ to $\mathbb{R}$ denoted by $\mathscr{F}_b = \{f \in \mathscr{F}| \exists k \in \mathbb{R}: |f(x)| < k, \forall x \in X\}$. Show that $\mathscr{F}$ and $\mathscr{F}_b$ are real vector spaces if we define:
+
+$$(f+g)(x) = f(x) +g(x), \forall f, g \in \mathscr{F}$$
+
+$$(\lambda f)(x) = \lambda f(x) , \forall f\in \mathscr{F}, \lambda \in \mathbb{R}$$
+
+
+
+## (3) Let $S \subset \mathbb{R}$. A real-valued function
+
+
+
